@@ -4,13 +4,18 @@ const App = () => {
   const [count, setCount] = useState(1);
   const [text, setText] = useState([]);
 
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   setText((prev) => {
+  //     var newtext = [];
+  //     newtext = data.filter((item, index) => count > index);
+  //     return newtext;
+  //   });
+  // };
   const handleSubmit = (e) => {
     e.preventDefault();
-    setText((prev) => {
-      var newtext = [];
-      newtext = data.filter((item, index) => count > index);
-      return newtext;
-    });
+    let amount = parseInt(count);
+    setText(data.slice(0, amount));
   };
   console.log(text);
   return (
